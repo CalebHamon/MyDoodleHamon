@@ -1,31 +1,35 @@
+import doodlepad.*;
+import doodlepad.Shape.ShapeMouseEventHandler;
+
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 
 public class Connections {
-    
-    public Connections(){
         
         public static ArrayList<YellowBlock> yellBlock = new ArrayList<YellowBlock>();
         public static ArrayList<BlueBlock> blueBlock = new ArrayList<BlueBlock>();
         public static ArrayList<GreenBlock> greeBlock = new ArrayList<GreenBlock>();
         public static ArrayList<PurpleBlock> purpBlock = new ArrayList<PurpleBlock>();
-
+        private static RoundRect shpButton11;    // Button Shape
+        private static boolean isOn;           // Button state
+        
         public static void main(String[] args){
-            addGames();
-
+            //addGames();
+            Screen myPushButton = new Screen();
         }
 
         public static void addGames() {
             try{
-                File yellowGames = new File(yellowAns.txt);
+                File yellowGames = new File("yellowAns.txt");
                 Scanner yellowGamesReader = new Scanner(yellowGames);
-                File blueGames = new File(blueAns.txt);
+                File blueGames = new File("blueAns.txt");
                 Scanner blueGamesReader = new Scanner(blueGames);
-                File greenGames = new File(greenAns.txt);
+                File greenGames = new File("greenAns.txt");
                 Scanner greenGamesReader = new Scanner(greenGames);
-                File purpleGames = new File(purpleAns.txt);
+                File purpleGames = new File("purpleAns.txt");
                 Scanner purpleGamesReader = new Scanner(purpleGames);
                 while (yellowGamesReader.hasNextLine()){
                     String yellowRaw = yellowGamesReader.nextLine();
@@ -49,5 +53,30 @@ public class Connections {
                 System.out.println("An error occured.");
                 e.printStackTrace();
             }
-    }
+        }
+        
+        public static void makeScreen(){
+            // Create button shape and initialize
+        shpButton11 = new RoundRect(100, 100, 75, 50, 20, 20);
+        shpButton11.setFillColor(255,255,222,255);
+
+        // Starts off
+        isOn = false;
+
+        // Set button click event handler method
+        shpButton11.setMouseClickedHandler(onPressedWord(11));
+        }
+
+        private static ShapeMouseEventHandler onPressedWord(int butNum) {
+            // Toggle button state
+            isOn = !isOn;
+    
+            // Set button fill color based on state
+            if (isOn) {
+                shpButton11.setFillColor(0, 255, 0);
+            } else {
+                shpButton11.setFillColor(200);
+            }
+            return null;
+        }
 }
