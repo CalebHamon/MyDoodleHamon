@@ -13,11 +13,14 @@ public class Connections {
     public static ArrayList<String> selected = new ArrayList<String>();
     private static RoundRect[][] buttons; // Array to store button shapes
     private RoundRect finishBtn;
+    private Image im;
     private static boolean isOn; // Button state
     private static int gamePlayed = (int) (Math.random() * 18);
     private static int timesGuessed = 0;
 
     public Connections() {
+        im = new Image("gamein.png", 500, 500);
+        
         buttons = new RoundRect[4][4]; // Create a 4x4 array of buttons
         finishBtn = new RoundRect(200, 400, 75, 50, 20, 20);
         finishBtn.setFillColor(200);
