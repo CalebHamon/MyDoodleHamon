@@ -13,12 +13,16 @@ public class Connections {
     public static ArrayList<Integer> avail = new ArrayList<Integer>();
     public static ArrayList<String> selected = new ArrayList<String>();
     private RoundRect[][] buttons; // Array to store button shapes
+    private RoundRect finishBtn;
     private boolean isOn; // Button state
     private static int gamePlayed = (int) (Math.random()*18);
 
 
     public Connections() {
         buttons = new RoundRect[4][4]; // Create a 4x4 array of buttons
+        finishBtn = new RoundRect(200,400,75,50,20,20);
+        finishBtn.setFillColor(200);
+        finishBtn.setText("Submit");
 
         // Initialize buttons and set event handlers
         for (int i = 0; i < buttons.length; i++) {
@@ -34,6 +38,10 @@ public class Connections {
 
         // Starts off
         isOn = false;
+    }
+
+    private void onPressedFinish(){
+        //check the arraylist
     }
 
     private String fillText(){
