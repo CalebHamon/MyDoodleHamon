@@ -15,6 +15,10 @@ public class GreenBlock {
         gre4 = gin4;
     }
 
+    public String retTop(){
+        return greTopic;
+    }
+
     public String retYe1(){
         return gre1;
     }
@@ -26,5 +30,18 @@ public class GreenBlock {
     }
     public String retYe4(){
         return gre4;
+    }
+
+    public boolean matching(String y1, String y2, String y3, String y4){
+        if(y1.equals(gre1) || y1.equals(gre2) || y1.equals(gre3) || y1.equals(gre4)){
+            if(y2.equals(gre1) || y2.equals(gre2) || y2.equals(gre3) || y2.equals(gre4)){
+                if(y3.equals(gre1) || y3.equals(gre2) || y3.equals(gre3) || y3.equals(gre4)){
+                    if(y4.equals(gre1) || y4.equals(gre2) || y4.equals(gre3) || y4.equals(gre4)){
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 }
