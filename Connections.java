@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+//Array lists used to track the different games
 public class Connections {
     public static ArrayList<YellowBlock> yellBlock = new ArrayList<YellowBlock>();
     public static ArrayList<BlueBlock> blueBlock = new ArrayList<BlueBlock>();
@@ -19,8 +20,9 @@ public class Connections {
     private static int timesGuessed = 0;
 
     public Connections() {
+        //Getting instructions + initial buttons
         im = new Image("gamein.png", 500, 500);
-        
+
         buttons = new RoundRect[4][4]; // Create a 4x4 array of buttons
         finishBtn = new RoundRect(200, 400, 75, 50, 20, 20);
         finishBtn.setFillColor(200);
@@ -43,6 +45,7 @@ public class Connections {
         isOn = false;
     }
 
+    //Making sure finish game works
     private static void onPressedFinish() {
         // check the arraylist
         isOn = !isOn;
@@ -80,6 +83,7 @@ public class Connections {
         }
     }
 
+    //Check if the combinations work
     private static void remFinish(int key) {
         for (int i = 0; i < buttons.length; i++) {
             for (int j = 0; j < buttons[i].length; j++) {
@@ -112,6 +116,7 @@ public class Connections {
         selected.clear();
     }
 
+    //Get the text in the buttons, and randomize it
     private String fillText() {
         int possible = avail.size();
         int getrandNum = (int) (Math.random() * possible);
@@ -167,6 +172,7 @@ public class Connections {
         }
     }
 
+    //initial on press method, selecting buttons
     private void onPressed(int row, int col) {
         // Toggle button state
         isOn = !isOn;
@@ -181,6 +187,8 @@ public class Connections {
         }
     }
 
+    //remove from selected arraylist
+
     public void findIndex(String p) {
         for (int i = 0; i < selected.size(); i++) {
             if (selected.get(i).equals(p)) {
@@ -189,6 +197,7 @@ public class Connections {
         }
     }
 
+    //get games
     public static void addGames() {
         for (int i = 1; i <= 16; i++) {
             avail.add(i);
