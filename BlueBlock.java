@@ -14,4 +14,17 @@ public class BlueBlock {
         blu3 = bin3;
         blu4 = bin4;
     }
+
+    public String retYe1(){
+        return blu1;
+    }
+    public String retYe2(){
+        return blu2;
+    }
+    public String retYe3(){
+        return blu3;
+    }
+    public String retYe4(){
+        return blu4;
+    }
 }

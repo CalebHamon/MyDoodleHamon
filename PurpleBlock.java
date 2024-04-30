@@ -14,5 +14,18 @@ public class PurpleBlock {
         purp3 = pin3;
         purp4 = pin4;
     }
+
+    public String retYe1(){
+        return purp1;
+    }
+    public String retYe2(){
+        return purp2;
+    }
+    public String retYe3(){
+        return purp3;
+    }
+    public String retYe4(){
+        return purp4;
+    }
     
 }

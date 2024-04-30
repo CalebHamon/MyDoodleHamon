@@ -14,4 +14,17 @@ public class YellowBlock {
         yell3 = yel3;
         yell4 = yel4;
     }
+
+    public String retYe1(){
+        return yell1;
+    }
+    public String retYe2(){
+        return yell2;
+    }
+    public String retYe3(){
+        return yell3;
+    }
+    public String retYe4(){
+        return yell4;
+    }
 }
